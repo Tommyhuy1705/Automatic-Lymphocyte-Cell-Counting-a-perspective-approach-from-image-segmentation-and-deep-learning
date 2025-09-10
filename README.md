@@ -31,42 +31,7 @@ This project offers a scalable, accurate, and generalizable solution for signatu
 
 ## Project Structure  
 ```plaintext
-├── configs/                         # Configuration files
-│   ├── __init__.py
-│   └── config_tSSN.yaml             # Model and training hyperparameters
-│
-├── dataloader/                     # Custom data loading and triplet construction
-│   ├── __init__.py
-│   └── tSSN_trainloader.py         # Triplet loader and balanced batch sampler
-│
-├── losses/                         # Triplet loss and metric logic
-│   ├── __init__.py
-│   └── triplet_loss.py             # Supports Euclidean, Cosine, Manhattan, Learnable
-│
-├── models/                         # Model definitions
-│   ├── __init__.py
-│   ├── Triplet_Siamese_Similarity_Network.py  # Main tSSN architecture
-│   └── feature_extractor.py        # ResNet-34 embedding extractor
-│
-├── notebooks/                      # Jupyter notebooks for development and visualization
-│   ├── final_evaluation.ipynb
-│   ├── model_training.ipynb
-│   └── yolov10-bcsd_training.ipynb
-│
-├── utils/                          # Helper scripts and evaluation tools
-│   ├── __init__.py
-│   ├── helpers.py                  # Miscellaneous utilities
-│   └── model_evaluation.py         # ROC, accuracy, precision, etc.
-│
-├── README.md                       # Project documentation
-├── requirements.txt                # Python dependencies
-├── setup.py                        # Installation setup (optional for packaging)
-├── signature_verification.egg-info/  # Build metadata (auto-generated)
-│   ├── PKG-INFO
-│   ├── SOURCES.txt
-│   ├── dependency_links.txt
-│   ├── requires.txt
-│   └── top_level.txt
+
 ```
 
 ---
