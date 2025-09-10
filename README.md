@@ -76,12 +76,7 @@ To access and download datasets directly from Kaggle within this project, follow
 
 ## **Results**
 ### Key Findings:
-1. **Best-performing configuration:**
-- Triplet Network with Euclidean distance and margin = 0.6
-- Accuracy: 95.6439% on CEDAR dataset
-2. Learnable distance function showed potential but did not outperform fixed metrics.
-3. Balanced batch sampling improved generalization across user styles.
-4. Embedding visualizations show clear separation between genuine and forged signatures.
+
 
 ___
  
