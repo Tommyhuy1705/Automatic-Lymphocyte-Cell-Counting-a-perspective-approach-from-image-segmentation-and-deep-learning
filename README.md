@@ -70,28 +70,7 @@ To access and download datasets directly from Kaggle within this project, follow
 ---
 
 ## **Usage**
-**- To train, evaluate, and analyze the Triplet Siamese Signature Network (tSSN), follow the steps below:**
-1. **Prepare your input dataset:**
-- Place raw document images into a folder `(e.g. data/raw_documents/)` if you're using YOLO for signature localization.
-2. **Localize signature regions using YOLOv10:**
-- Open and run the notebook `notebooks/yolov10-bcsd_training.ipynb`.
-- This will detect and crop the signature regions from input documents and save them into a designated output directory `(e.g. data/signatures/)`.
-3. **Configure model settings and experiment parameters:**
-- Open `configs/config_tSSN.yaml`.
-- Modify parameters as needed:
-  - `distance_mode: choose from euclidean, cosine, manhattan, learnable`
-  - `margin: set values like 0.2, 0.4, ..., 1.0`
-  - `feature_dim, batch_size, epochs, and other hyperparameters`
-4. **Train the Triplet Siamese Network (tSSN)**
-- Open and run the notebook `notebooks/model_training.ipynb`.
-- The training loop will:
-  - Use `tSSN_trainloader.py` for balanced triplet sampling.
-  - Build the model from `Triplet_Siamese_Similarity_Network.py`.
-  - Apply the selected loss from `triplet_loss.py`.
-5. **Evaluate model performance:**
-- Run the notebook `experiment/Evaluation-cells-counting.ipynb` to:
-- Compute accuracy, MSE, MAE.
-- Visualize evaluation metrics.
+**- To train, evaluate, and analyze the YOLO and U-Net models for lymphocyte cell counting, follow the steps below:**
 
 ---
 
@@ -112,13 +91,13 @@ ___
 ### Datasets Usage:
 - Cell Counting (Roboflow): [Use for train YOLO & U-net model](https://www.kaggle.com/datasets/tensura3607/cell-counting-roboflow-segmentation-masks)
 
-### triplet Siamese Similarity Network (tSSN)
-[View tSSN Training Notebook on Kaggle](https://www.kaggle.com/code/giahuytranviet/triplet-trainmodel)
->This notebook contains the full training process for the tSSN model, including preprocessing, training.
+### U-Net
+[View tSSN Training Notebook on Kaggle]()
+>This notebook contains full training pipeline for U-Net segmentation model.
 
-### YOLOv10
-[YOLOv10 Training Notebook on Kaggle](https://www.kaggle.com/code/nguyenthien3001/yolov10-bcsd)
->This notebook covers training the YOLOv10 model for object detection, including data loading, training, and inference demo.
+### YOLOv8
+[YOLOv8 Training Notebook on Kaggle]()
+>This notebook covers YOLO-based training for cell detection and counting.
 
 ## Notes
 - Models were trained on Kaggle GPU environments.
@@ -127,25 +106,23 @@ ___
 
 ## **Contributions**
 
-- Designed and implemented the full pipeline for offline signature verification using a Triplet Siamese Network (tSSN).
-- Integrated YOLOv10 for efficient signature region localization from scanned documents.
-- Developed flexible Triplet Loss module supporting multiple distance metrics: Euclidean, Cosine, Manhattan, and Learnable.
-- Implemented a balanced batch sampler to improve triplet selection and training stability.
-- Conducted extensive experiments with margin tuning and distance metric variations.
-- Achieved 95.6439% accuracy on the CEDAR dataset using Euclidean distance with margin = 0.6.
-- Visualized performance through ROC curves, precision-recall metrics, and embedding space analysis.
-- Structured the project for reproducibility and scalability, using modular PyTorch components and well-documented notebooks.
-- Prepared supporting materials including dataset configuration, training logs, and evaluation tools.
+- Designed and implemented a pipeline for automated lymphocyte cell counting.
+- Integrated YOLO for detection-based counting.
+- Developed and trained U-Net for segmentation-based counting.
+- Applied a data augmentation pipeline (rotation, flipping, shifting, scaling, brightness, noise).
+- Evaluated models with MSE, MAE, MAPE, and R² for robust benchmarking.
+- Highlighted strengths and limitations of detection vs segmentation approaches.
+- Structured the project with modular code, reproducible notebooks, and clear dataset usage.
 
 ---
 
 ## **Future Work**
-- Cross-dataset evaluation on GPDS, BHSig260 for generalizability.
-- Integrate lighter backbones (e.g., MobileNet) for real-time performance.
-- Incorporate attention mechanisms for enhanced local feature focus.
-- Explore adaptive or learnable margin strategies.
-- Apply to multilingual and multicultural signature styles.
-- Introduce explainable AI components for visualizing decision-making process.
+- Expand dataset size and diversity for better model generalization.
+- Explore hybrid detection + segmentation models for improved accuracy.
+- Test lightweight architectures (e.g., MobileNet-based U-Net) for faster inference.
+- Incorporate uncertainty estimation for more reliable cell counting.
+- Benchmark against additional metrics such as F1-score for detection.
+- Investigate transfer learning from large-scale biomedical segmentation datasets.
 
 ---
 
