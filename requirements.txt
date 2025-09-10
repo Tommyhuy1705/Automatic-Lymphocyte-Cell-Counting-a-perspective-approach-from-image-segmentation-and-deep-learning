@@ -5,7 +5,6 @@ torch
 torchvision
 segmentation-models-pytorch
 albumentations
-albumentations-pytorch
 ultralytics
 tqdm
 huggingface-hub
