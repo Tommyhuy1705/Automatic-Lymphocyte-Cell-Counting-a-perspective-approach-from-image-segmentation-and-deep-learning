@@ -1,6 +1,8 @@
 import streamlit as st
 import tempfile
 from src import pipeline
+from src.pipeline import UNET_MODEL, YOLO_MODEL
+
 
 st.set_page_config(page_title="Cell Counting App", layout="wide")
 st.title("🔬 CCA")
