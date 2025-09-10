@@ -1,10 +1,11 @@
 streamlit>=1.23.0
 numpy
-opencv-python-headless
+opencv-python-headless==4.8.0.74
 torch
 torchvision
 segmentation-models-pytorch
 albumentations
+albumentations-pytorch
 ultralytics
 tqdm
 huggingface-hub
