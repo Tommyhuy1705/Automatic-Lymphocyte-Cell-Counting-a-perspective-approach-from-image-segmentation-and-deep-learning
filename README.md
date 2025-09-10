@@ -1,31 +1,32 @@
 # Benchmarking-YOLO-and-U-Net-Segmentation-Models-for-Automated-Lymphocyte-Cell-Counting
 ## Introduction  
 
-Handwritten signatures continue to serve as a widely accepted form of identity verification across domains such as banking, legal documentation, and governmental services. However, the increasing sophistication of forgery techniques presents serious challenges to the reliability of traditional verification systems, which are often rule-based or reliant on handcrafted features.
+Accurate lymphocyte cell counting plays a critical role in biomedical research and clinical diagnostics, providing essential insights into immune system health and disease progression. Traditionally, this task has been performed manually by experts under microscopes, which is both time-consuming and prone to human error. To address these challenges, automated computer vision techniques have emerged as promising solutions for reliable and scalable cell analysis.
 
-To address these limitations, this project presents a deep learning-based framework for offline signature forgery detection, leveraging a Triplet Siamese Similarity Network (tSSN) trained with triplet loss. The proposed system integrates three key components:
-- **YOLOv10**: efficient signature localization from scanned document images.
-- **ResNet-34**: the feature extractor to generate robust, high-dimensional embeddings of signature images.
-- **Triplet Network with Triplet Loss**: learn a discriminative embedding space that enforces minimal distance between genuine signature pairs and maximal distance from forgeries.
+In this project, we benchmark two popular deep learning approaches for lymphocyte cell counting:
 
-A novel contribution of this work is the integration of multiple distance metrics—including Euclidean, Cosine, Manhattan, and a learnable distance function—to investigate how similarity definitions affect verification performance. Experimental results show that using Euclidean distance with a margin of 0.6 achieves the highest accuracy of 95.6439% on the CEDAR dataset, significantly outperforming previous benchmarks.
+- YOLO (You Only Look Once) — a state-of-the-art object detection model widely used for fast and precise localization of individual objects in images.
+- U-Net — a convolutional neural network architecture specifically designed for biomedical image segmentation, effective at capturing pixel-level structures.
 
-The system is trained using balanced batch sampling, enabling dynamic construction of hard and semi-hard triplets during training and improving model generalization across diverse handwriting styles. Evaluation metrics include accuracy, precision, recall, ROC-AUC, FAR, FRR, and EER.
+We evaluate both models on an augmented dataset of lymphocyte cell images, focusing on accuracy, error metrics, and robustness. Our goal is to compare the strengths and weaknesses of detection-based (YOLO) versus segmentation-based (U-Net) approaches, providing practical insights into their suitability for automated lymphocyte analysis.
 
-This project offers a scalable, accurate, and generalizable solution for signature-based identity authentication, with direct applicability in high-security environments such as banking, finance, and legal processes.
+This study not only demonstrates the feasibility of deep learning in biomedical image processing but also highlights important considerations for selecting the right architecture depending on application requirements such as precision, speed, and scalability.
 
 ## **Features**
-- Offline signature forgery detection based on deep metric learning.
-- Signature region localization using YOLOv10.
-- Embedding extraction via ResNet-34 backbone.
-- Metric learning with Triplet Loss using four distance modes:
-  - **Euclidean distance**
-  - **Cosine distance**
-  - **Manhattan distance**
-  - **Learnable distance**
-- Evaluation with accuracy, ROC-AUC, EER, precision, recall.
-- Experimental margin tuning: [0.2, 0.4, 0.6, 0.8, 1.0].
-- Balanced batch sampling for consistent triplet generation.
+- Automated lymphocyte cell counting for biomedical image analysis.
+- Cell localization and detection using YOLO.
+- Pixel-level segmentation using U-Net.
+- Comparison of two approaches:
+  - Detection-based (bounding box predictions with YOLO)
+  - Segmentation-based (binary masks with U-Net)
+- Evaluation with regression and error metrics:
+  - **Mean Squared Error (MSE)**
+  - **Mean Absolute Error (MAE)**
+  - **Mean Absolute Percentage Error (MAPE)**
+  - **Coefficient of Determination (R²)**
+- Data augmentation pipeline (rotation, flipping, shifting, scaling, brightness adjustment, Gaussian noise).
+- Benchmarking on augmented lymphocyte dataset with consistent training/testing splits.
+- Practical insights on model suitability for accuracy, speed, and scalability in biomedical workflows.
 
 ---
 
