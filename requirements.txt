@@ -1,0 +1,10 @@
+streamlit>=1.23.0
+numpy
+opencv-python-headless
+torch           # CPU wheel sẽ được cài từ PyPI
+torchvision
+segmentation-models-pytorch
+albumentations
+ultralytics
+tqdm
+huggingface-hub
