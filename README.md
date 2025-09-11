@@ -62,6 +62,8 @@ We evaluate both models on an augmented dataset of lymphocyte cell images, focus
 
 [Cell Counting App](https://cca-app.streamlit.app/)
 
+![Cell Counting App Screenshot](images/cca_screenshot.png)
+
 The application allows you to:
 - Upload microscopic cell images.
 - Test both YOLOv8 (detection) and U-Net (segmentation) models.
