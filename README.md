@@ -39,7 +39,9 @@ We evaluate both models on an augmented dataset of lymphocyte cell images, focus
 │
 ├── src/                            
 │   ├── __init__.py
-│   └── pipeline.py                     
+│   └── pipeline.py
+│
+├── images/             
 │              
 ├── app.py                         
 ├── requirements.txt
