@@ -1,4 +1,4 @@
-# Benchmarking-YOLO-and-U-Net-Segmentation-Models-for-Automated-Lymphocyte-Cell-Counting
+# Automatic-Lymphocyte-Cell-Counting-a-perspective-approach-from-image-segmentation-and-deep-learning
 
 ## Introduction  
 Accurate lymphocyte cell counting plays a critical role in biomedical research and clinical diagnostics, providing essential insights into immune system health and disease progression. Traditionally, this task has been performed manually by experts under microscopes, which is both time-consuming and prone to human error. To address these challenges, automated computer vision techniques have emerged as promising solutions for reliable and scalable cell analysis.
