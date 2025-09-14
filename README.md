@@ -20,7 +20,7 @@ We evaluate both models on an augmented dataset of lymphocyte cell images, focus
   - Detection-based (bounding box predictions with YOLO).
   - Segmentation-based (binary masks with U-Net).
 - Evaluation with regression and error metrics:
-  - **MSE**, **MAE**, **MAPE**, **R²**, **Dispersion Statistics**.
+  - **RMSE**, **MAE**, **MAPE**, **R²**, **Dispersion Statistics**.
 - Data augmentation pipeline (rotation, flipping, shifting, scaling, brightness adjustment, Gaussian noise).
 - Benchmarking on augmented lymphocyte dataset with consistent training/testing splits.
 
@@ -102,10 +102,10 @@ The application allows you to:
 
 ## **Results**
 
-| Model  | MSE | MAE | MAPE | R²  | Dispersion Statistics |
+| Model  | RMSE | MAE | MAPE | R²  | Dispersion Statistics |
 | ------ | --- | --- | ---- | --- | --------------------- |
-| YOLOv8 | 39376.08 | 107.71 | 26.45  | 0.38 |166.65|
-| U-Net  | 43043.62 | 121.71 | 34.53  | 0.32 |168.02|
+| YOLOv8 | 71.34 | 43.15 | 14.19  | 0.92 | 56.81 |
+| U-Net  | 183.25 | 109.13 | 31.58  | 0.47 | 147.20 |
 
 ---
 
