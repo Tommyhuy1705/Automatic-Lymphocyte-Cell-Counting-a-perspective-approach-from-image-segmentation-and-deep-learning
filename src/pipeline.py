@@ -123,7 +123,7 @@ def run_yolo(image_path):
         raise FileNotFoundError(image_path)
     orig_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    results = YOLO_MODEL(img, verbose=False)
+    results = YOLO_MODEL(img, verbose=False, max_det=1000, augment = True)
     annotated = orig_rgb.copy()
     for box in results[0].boxes.xyxy.cpu().numpy():
         x1, y1, x2, y2 = box[:4]
