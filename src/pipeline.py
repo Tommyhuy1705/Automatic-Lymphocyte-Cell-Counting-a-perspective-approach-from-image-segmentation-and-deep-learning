@@ -10,7 +10,7 @@ from huggingface_hub import hf_hub_download
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-#Transform cho Unet ----
+# Transform for Unet ----
 test_transform = A.Compose([
     A.Resize(256, 256),
     A.Normalize(mean=(0.0, 0.0, 0.0), std=(1.0, 1.0, 1.0)),
@@ -44,7 +44,7 @@ def load_unet(model_path=UNET_PATH):
 def load_yolo(model_path=YOLO_PATH):
     return YOLO(model_path)
 
-# Khởi động model khi import
+# Restart model when import
 UNET_MODEL = load_unet()
 YOLO_MODEL = load_yolo()
 
@@ -75,7 +75,7 @@ def preprocess_image(image, method="sobel"):
 
     return cv2.cvtColor(enhanced, cv2.COLOR_GRAY2RGB)
 
-#Predict Unet
+# Predict Unet
 def predict_unet(image_tensor):
     with torch.no_grad():
         outputs = UNET_MODEL(image_tensor.to(DEVICE))
@@ -87,7 +87,7 @@ def predict_unet(image_tensor):
 def count_and_draw(mask, original_image, min_size=10):
     mask = (mask > 0).astype(np.uint8)
 
-    # Bỏ vùng nhỏ hơn min_size pixel
+    # Discard areas smaller than min_size pixels
     num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
     clean_mask = np.zeros_like(mask)
     for i in range(1, num_labels):
