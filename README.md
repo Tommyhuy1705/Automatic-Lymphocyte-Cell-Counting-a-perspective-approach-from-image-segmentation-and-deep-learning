@@ -33,9 +33,10 @@ We evaluate both models on an augmented dataset of lymphocyte cell images, focus
 │   └── devcontainer.json
 │
 ├── experiment/                    
-│   ├── data-augmentation-lymphocyte.ipynb
-│   ├── lymphocyte-algorithms-final.ipynb
-│   └── lymphocyte-deeplearning.ipynb
+│   ├── data_augmentation_lymphocyte.ipynb
+|   ├── evaluation.ipynb
+│   ├── lymphocyte_algorithms.ipynb
+│   └── lymphocyte_deeplearning.ipynb
 │
 ├── src/                            
 │   ├── __init__.py
